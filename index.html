@@ -139,10 +139,9 @@ tailwind.config = {
   /* Main scroll container */
   #main-scroll {
     overflow-y: auto;
-    height: 100vh;
-    height: 100dvh;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   /* Header */
@@ -320,7 +319,7 @@ tailwind.config = {
 <!-- ============================================ -->
 <!-- APP SHELL                                    -->
 <!-- ============================================ -->
-<div id="app" class="hidden">
+<div id="app" class="hidden flex flex-col h-dvh">
 
   <!-- HEADER -->
   <header id="app-header" class="fixed top-0 left-0 right-0 z-50 border-b border-transparent h-14 flex items-center justify-between px-5 md:px-8">
@@ -333,31 +332,34 @@ tailwind.config = {
     </button>
   </header>
 
-  <!-- MAIN SCROLLABLE AREA -->
-  <main id="main-scroll">
+  <!-- HEADER SPACER -->
+  <div class="h-14 shrink-0"></div>
 
-    <!-- SEARCH BAR -->
-    <div id="search-wrapper" class="px-5 md:px-8 pt-4 pb-2 max-w-app mx-auto">
-      <div class="relative flex items-center w-full rounded-pill bg-card border border-border px-4 py-3 transition-all duration-200">
-        <i class="ti ti-search text-muted/50 text-[18px] mr-3 pointer-events-none"></i>
-        <input
-          id="search-input"
-          type="text"
-          class="search-input w-full bg-transparent border-none font-body text-[15px] text-text p-0 placeholder:text-muted/40 focus:ring-0"
-          placeholder="Buscar en la carta..."
-          autocomplete="off"
-        />
-        <button id="search-clear" class="hidden w-6 h-6 flex items-center justify-center rounded-full bg-border/60 hover:bg-border transition-colors ml-2 shrink-0" aria-label="Limpiar búsqueda">
-          <i class="ti ti-x text-muted text-[14px]"></i>
-        </button>
-      </div>
+  <!-- SEARCH BAR (always visible) -->
+  <div id="search-wrapper" class="shrink-0 px-5 md:px-8 pt-4 pb-2 max-w-app mx-auto w-full">
+    <div class="relative flex items-center w-full rounded-pill bg-card border border-border px-4 py-3 transition-all duration-200">
+      <i class="ti ti-search text-muted/50 text-[18px] mr-3 pointer-events-none"></i>
+      <input
+        id="search-input"
+        type="text"
+        class="search-input w-full bg-transparent border-none font-body text-[15px] text-text p-0 placeholder:text-muted/40 focus:ring-0"
+        placeholder="Buscar en la carta..."
+        autocomplete="off"
+      />
+      <button id="search-clear" class="hidden w-6 h-6 flex items-center justify-center rounded-full bg-border/60 hover:bg-border transition-colors ml-2 shrink-0" aria-label="Limpiar búsqueda">
+        <i class="ti ti-x text-muted text-[14px]"></i>
+      </button>
     </div>
+  </div>
 
-    <!-- CATEGORY PILLS NAVIGATION -->
-    <nav class="sticky top-0 z-40 bg-cream/92 backdrop-blur-md border-b border-border/40">
-      <div id="pills-container" class="flex overflow-x-auto hide-scrollbar gap-2 px-5 md:px-8 py-3 max-w-app mx-auto">
-      </div>
-    </nav>
+  <!-- CATEGORY PILLS NAVIGATION (always visible) -->
+  <nav id="pills-nav" class="shrink-0 z-40 bg-cream/92 backdrop-blur-md border-b border-border/40">
+    <div id="pills-container" class="flex overflow-x-auto hide-scrollbar gap-2 px-5 md:px-8 py-3 max-w-app mx-auto">
+    </div>
+  </nav>
+
+  <!-- MAIN SCROLLABLE AREA -->
+  <main id="main-scroll" class="flex-1 min-h-0">
 
     <!-- PRODUCT SECTIONS -->
     <div id="sections-container" class="max-w-app mx-auto px-5 md:px-8 pb-8">
@@ -370,33 +372,33 @@ tailwind.config = {
       <p class="font-body text-[13px] text-muted/40 mt-1">Probá con otra palabra clave.</p>
     </div>
 
-  </main>
+    <!-- FOOTER -->
+    <footer class="border-t border-border/60 py-10 px-5 md:px-8">
+      <div class="max-w-app mx-auto text-center">
+        <p class="font-display text-[16px] font-bold text-brand mb-3">Angelino Chopería</p>
+        <div class="space-y-1.5 mb-4">
+          <p class="font-body text-[12px] text-muted/60 flex items-center justify-center gap-1.5">
+            <i class="ti ti-map-pin text-[14px]"></i>
+            Ruta 6 y Aarón Castellanos
+          </p>
+          <p class="font-body text-[12px] text-muted/60 flex items-center justify-center gap-1.5">
+            <i class="ti ti-clock text-[14px]"></i>
+            Miércoles a Domingo
+          </p>
+          <p class="font-body text-[12px] text-muted/60 flex items-center justify-center gap-1.5">
+            <i class="ti ti-phone text-[14px]"></i>
+            <a href="https://wa.me/5493496500320" target="_blank" rel="noopener" class="hover:text-brand transition-colors">3496-500320</a>
+          </p>
+        </div>
+        <div class="border-t border-border/40 pt-4">
+          <p class="font-body text-[11px] text-muted/30 tracking-wide">
+            &copy; 2025 Angelino Chopería &mdash; Todos los derechos reservados
+          </p>
+        </div>
+      </div>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-border/60 py-10 px-5 md:px-8">
-    <div class="max-w-app mx-auto text-center">
-      <p class="font-display text-[16px] font-bold text-brand mb-3">Angelino Chopería</p>
-      <div class="space-y-1.5 mb-4">
-        <p class="font-body text-[12px] text-muted/60 flex items-center justify-center gap-1.5">
-          <i class="ti ti-map-pin text-[14px]"></i>
-          Ruta 6 y Aarón Castellanos
-        </p>
-        <p class="font-body text-[12px] text-muted/60 flex items-center justify-center gap-1.5">
-          <i class="ti ti-clock text-[14px]"></i>
-          Miércoles a Domingo
-        </p>
-        <p class="font-body text-[12px] text-muted/60 flex items-center justify-center gap-1.5">
-          <i class="ti ti-phone text-[14px]"></i>
-          <a href="https://wa.me/5493496500320" target="_blank" rel="noopener" class="hover:text-brand transition-colors">3496-500320</a>
-        </p>
-      </div>
-      <div class="border-t border-border/40 pt-4">
-        <p class="font-body text-[11px] text-muted/30 tracking-wide">
-          &copy; 2025 Angelino Chopería &mdash; Todos los derechos reservados
-        </p>
-      </div>
-    </div>
-  </footer>
+  </main>
 
 </div>
 
