@@ -278,12 +278,7 @@ tailwind.config = {
     >
       Angelino Chopería
     </h1>
-    <p
-      class="font-body text-[15px] md:text-[17px] text-muted leading-relaxed mb-5 animate-fade-up"
-      style="animation-delay: 100ms; opacity: 0"
-    >
-      Bodegón moderno &amp; Cerveza artesanal.<br/>Tradición argentina reinterpretada.
-    </p>
+
     <div
       class="mb-10 animate-fade-up space-y-2.5"
       style="animation-delay: 200ms; opacity: 0"
@@ -327,9 +322,9 @@ tailwind.config = {
       <img src="img/isologo.png" alt="" class="h-7 w-auto" aria-hidden="true"/>
       <span class="font-display text-[18px] font-bold text-brand tracking-tight hidden sm:inline">Angelino</span>
     </div>
-    <button id="btn-search-toggle" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-brand/5 transition-colors" aria-label="Buscar">
-      <i class="ti ti-search text-brand text-[22px]"></i>
-    </button>
+    <a href="https://www.instagram.com/angelino.choperia/" target="_blank" rel="noopener" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-brand/5 transition-colors" aria-label="Instagram">
+      <i class="ti ti-instagram text-brand text-[22px]"></i>
+    </a>
   </header>
 
   <!-- HEADER SPACER -->
@@ -418,7 +413,7 @@ tailwind.config = {
       Esperamos que disfrutes tu experiencia en Angelino.
     </p>
     <a
-      href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID"
+      href="https://www.google.com/maps/place/Angelino+Choperia/@-31.4536056,-60.9124107,17z/data=!3m1!4b1!4m6!3m5!1s0x95b513016fa6f873:0x2abf9bcdbfa7a67e!8m2!3d-31.4536056!4d-60.9124107!16s%2Fg%2F11cjgbzgxm"
       target="_blank"
       rel="noopener"
       class="btn-primary w-full bg-brand text-white font-body text-[13px] font-bold tracking-[0.06em] uppercase py-3.5 rounded-card hover:bg-brand-light flex items-center justify-center gap-2 mb-3"
@@ -440,206 +435,13 @@ tailwind.config = {
 
 const MENU_DATA = [
   // ==========================================
-  // COMIDAS — Tablas primero
+  // 1. CON ALCOHOL
   // ==========================================
   {
-    id: 'tablas',
-    name: 'Tablas para Compartir',
-    icon: 'ti-grill',
-    description: 'Porciones generosas para compartir en mesa.',
-    products: [
-      { id: 'tab-criolla', name: 'Tabla Criolla', description: 'Para 2 personas. Salamín, queso y aceituna.', price: '$24.000', badges: ['share'] },
-      { id: 'tab-milanesas', name: 'Tabla Milanesas', description: 'Para 2 personas. De pollo y de carne con fritas.', price: '$25.000', badges: ['share'] },
-      { id: 'tab-campo', name: 'Tabla Campo', description: 'Para 2 personas. Queso, salamines, aceitunas, jamón, mortadela, primavera, milán, escabeche.', price: '$25.000', badges: ['share'] },
-      { id: 'tab-media-angelino', name: 'Media Angelino', description: 'Para 2 personas.', price: '$25.000', badges: ['share'] },
-      { id: 'tab-caliente', name: 'Tabla Caliente', description: 'Para 2 personas. Cazuela de salchichas, cazuela de pollo al verdeo, 2 empanadas, 4 tostados, milanesa, papas fritas.', price: '$30.000', badges: ['share'] },
-      { id: 'tab-media-argentina', name: 'Media Argentina', description: 'Para 2 personas.', price: '$33.900', badges: ['share'] },
-      { id: 'tab-angelino', name: 'Tabla Angelino', description: 'Para 4 personas. Papas fritas, milanesas, escabeche, fiambres, sándwiches, empanadas, papas con mayo.', price: '$42.000', badges: ['share', 'star'] },
-      { id: 'tab-argentina', name: 'Tabla Argentina', description: 'Para 4 personas. Pollo arrollado, pionono, sándwiches mixtos, 4 empanadas, salamín, queso y aceitunas.', price: '$45.000', badges: ['share'] },
-      { id: 'tab-veggie', name: 'Tabla Vegetariana', description: 'Para 2 personas. Queso, bastones de muzzarella, aros de cebolla, aceitunas, fritas y sándwiches de queso.', price: 'A consultar', badges: ['share', 'veg'] },
-    ],
-  },
-  {
-    id: 'platos-calientes',
-    name: 'Platos Calientes',
-    icon: 'ti-flame',
-    description: 'Platos de fuego, servidos con papas fritas o ensalada.',
-    products: [
-      { id: 'pc-bondiola', name: 'Bondiola al Plato', description: 'A la mostaza / Al roquefort / Al puerro.', price: '$18.500' },
-      { id: 'pc-matambre', name: 'Matambre', price: '$19.500' },
-      { id: 'pc-matpizz', name: 'Matambre a la Pizza', price: '$21.000' },
-      { id: 'pc-vacio', name: 'Vacío al Horno', description: 'A la mostaza / Al roquefort / Al puerro.', price: '$22.000' },
-      { id: 'pc-canelones', name: 'Canelones de Verdura', description: 'Con salsa rosa o bolognesa.', price: 'A consultar' },
-      { id: 'pc-tallarines', name: 'Tallarines', description: 'Con salsa rosa o bolognesa.', price: 'A consultar' },
-    ],
-  },
-  {
-    id: 'milanesas',
-    name: 'Milanesas',
-    icon: 'ti-tools-kitchen-2',
-    description: 'Milanesas clásicas argentinas, servidas con papas fritas.',
-    products: [
-      { id: 'mil-comun', name: 'Milanesa Común', price: 'A consultar' },
-      { id: 'mil-pizza', name: 'Milanesa a la Pizza', description: 'Queso, aceitunas y salsa.', price: '$17.600' },
-      { id: 'mil-napo', name: 'Milanesa Napolitana', description: 'Queso, rodajas de tomate, orégano, huevo, morrón y aceitunas.', price: '$19.200' },
-      { id: 'mil-cheddar', name: 'Milanesa Cheddar', description: 'Cheddar, cebolla y bacon.', price: '$21.000' },
-      { id: 'mil-super', name: 'Milanesa Súper', description: 'Salsa, queso, jamón, aceitunas, morrón y huevo.', price: 'A consultar' },
-      { id: 'mil-fugazzeta', name: 'Milanesa Fugazzetta', description: 'Queso, salsa, cebolla y aceitunas.', price: 'A consultar' },
-      { id: 'mil-caballo', name: 'Milanesa a Caballo', description: 'Huevo frito.', price: 'A consultar' },
-    ],
-  },
-  {
-    id: 'familiares',
-    name: 'Familiares de Milanesa',
-    icon: 'ti-users-group',
-    description: 'Porciones familiares de milanesa, pollo o carne, con fritas.',
-    products: [
-      { id: 'fam-comun', name: 'Familiar Común', description: 'Queso, lechuga y tomate.', price: '$17.500', badges: ['share'] },
-      { id: 'fam-gratin', name: 'Familiar Gratinado', description: 'Jamón y queso.', price: '$18.500', badges: ['share'] },
-      { id: 'fam-completo', name: 'Familiar Completo', description: 'Lechuga, tomate, jamón, queso y huevo frito.', price: 'A consultar', badges: ['share'] },
-    ],
-  },
-  {
-    id: 'lomitos',
-    name: 'Lomitos',
-    icon: 'ti-lego',
-    description: 'Lomitos preparados al momento, servidos con papas fritas.',
-    products: [
-      { id: 'lom-comun', name: 'Lomito Común', description: 'Queso, tomate y lechuga.', price: 'A consultar' },
-      { id: 'lom-gratin', name: 'Lomito Gratinado', description: 'Jamón y queso.', price: 'A consultar' },
-      { id: 'lom-especial', name: 'Lomito Especial', description: 'Jamón, queso, lechuga y tomate.', price: 'A consultar' },
-      { id: 'lom-completo', name: 'Lomito Completo', description: 'Jamón, queso, lechuga, tomate y huevo frito.', price: 'A consultar' },
-    ],
-  },
-  {
-    id: 'hamburguesas',
-    name: 'Hamburguesas',
-    icon: 'ti-burger',
-    description: 'Carne premium, preparadas al momento. Todas con papas fritas.',
-    products: [
-      { id: 'burg-pancarne', name: 'Pan Carne', price: '$11.000' },
-      { id: 'burg-veggie', name: 'Vegetariana', description: 'Medallón, tomate, lechuga y queso.', price: '$11.200', badges: ['veg'] },
-      { id: 'burg-comun', name: 'Común', description: 'Queso, lechuga y tomate.', price: '$12.000' },
-      { id: 'burg-gratinada', name: 'Gratinada', description: 'Jamón y queso.', price: '$12.000' },
-      { id: 'burg-especial', name: 'Especial', description: 'Jamón, queso, lechuga y tomate.', price: '$12.500' },
-      { id: 'burg-completa', name: 'Completa', price: '$13.000' },
-      { id: 'burg-cheddar', name: 'Cheddar', description: 'Queso cheddar, bacon, salsa barbacoa y cebolla.', price: '$15.000' },
-      { id: 'burg-azul', name: 'Azul', description: 'Queso, queso azul, lechuga, tomate, huevo y jamón.', price: '$15.000' },
-      { id: 'burg-super', name: 'Súper', description: 'Queso, jamón, huevo frito, cheddar, cebolla y bacon.', price: '$15.000' },
-    ],
-  },
-  {
-    id: 'paninis',
-    name: 'Paninis',
-    icon: 'ti-bread',
-    description: 'Panini caliente con papas fritas.',
-    products: [
-      { id: 'pani-comun', name: 'Panini Común', description: 'Queso, lechuga y tomate.', price: '$12.500' },
-      { id: 'pani-gratin', name: 'Panini Gratinado', description: 'Jamón y queso.', price: '$12.500' },
-      { id: 'pani-completo', name: 'Panini Completo', description: 'Jamón, queso, tomate, lechuga y huevo frito.', price: '$13.500' },
-      { id: 'pani-cheddar', name: 'Panini Cheddar', description: 'Queso cheddar, panceta, BBQ y cebolla.', price: '$15.500' },
-    ],
-  },
-  {
-    id: 'sandwiches-miga',
-    name: 'Sándwiches de Miga',
-    icon: 'ti-slice',
-    description: 'Sándwiches mixtos por plancha. Triples disponibles.',
-    products: [
-      { id: 'miga-jq', name: 'Jamón y Queso — Mixto', price: '$9.000' },
-      { id: 'miga-queso', name: 'Queso — Mixto', price: '$9.000' },
-      { id: 'miga-milan', name: 'Milán — Mixto', price: '$9.000' },
-      { id: 'miga-pollo', name: 'Pollo — Mixto', price: '$9.500' },
-      { id: 'miga-lengua', name: 'Lengua — Mixto', price: '$10.000' },
-      { id: 'miga-jcrudo', name: 'Jamón Crudo — Mixto', price: '$10.500' },
-      { id: 'miga-bondiola', name: 'Bondiola — Mixto', price: '$10.500' },
-      { id: 'miga-roque', name: 'Roquefort — Mixto', price: '$10.500' },
-      { id: 'miga-anchoa', name: 'Anchoa — Mixto', price: '$10.500' },
-      { id: 'trip-jq', name: 'Jamón y Queso — Triple', price: '$10.000' },
-      { id: 'trip-queso', name: 'Queso — Triple', price: '$10.000' },
-      { id: 'trip-pollo', name: 'Pollo — Triple', price: '$10.500' },
-      { id: 'trip-lengua', name: 'Lengua — Triple', price: '$11.000' },
-      { id: 'trip-jcrudo', name: 'Jamón Crudo — Triple', price: '$11.500' },
-    ],
-  },
-  {
-    id: 'empanadas',
-    name: 'Empanadas Fritas',
-    icon: 'ti-cookie',
-    description: 'Empanadas fritas al momento.',
-    products: [
-      { id: 'emp-carne', name: 'Empanada Frita de Carne', price: '$1.900' },
-      { id: 'emp-jq', name: 'Empanada Frita de Jamón y Queso', price: '$1.900' },
-    ],
-  },
-  {
-    id: 'panchos',
-    name: 'Panchos',
-    icon: 'ti-sausage',
-    description: 'Panchos clásicos con papas fritas crocantes.',
-    products: [
-      { id: 'pancho-comun', name: 'Pancho Común', description: 'Aderezos.', price: '$7.000' },
-      { id: 'pancho-gratin', name: 'Pancho Gratinado', description: 'Jamón y queso.', price: '$8.000' },
-      { id: 'pancho-cheddar', name: 'Pancho Cheddar', description: 'Con salsa cheddar.', price: '$9.500' },
-    ],
-  },
-  {
-    id: 'pizzas',
-    name: 'Pizzas',
-    icon: 'ti-pizza',
-    description: 'Pizzas artesanales, masa casera.',
-    products: [
-      { id: 'piz-comun', name: 'Pizza Común', description: 'Queso, morrón, huevo, aceitunas.', price: '$15.000' },
-      { id: 'piz-muzzarella', name: 'Muzzarella', description: 'Muzzarella, aceitunas.', price: '$15.500' },
-      { id: 'piz-roque', name: 'Roquefort', description: 'Queso, queso roquefort y aceitunas.', price: '$16.000' },
-      { id: 'piz-anchoa', name: 'Anchoa', description: 'Queso, morrón, aceitunas y anchoas.', price: '$16.000' },
-      { id: 'piz-especial', name: 'Especial', description: 'Queso, jamón, huevo, morrón y aceitunas.', price: '$16.500' },
-      { id: 'piz-provenzal', name: 'Provenzal', description: 'Queso, provenzal, aceituna y morrón.', price: '$16.600' },
-      { id: 'piz-super', name: 'Pizza Súper', description: 'Queso, palmitos, salsa golf, jamón, aceituna, morrón y huevo.', price: '$20.000' },
-      { id: 'piz-4quesos', name: '4 Quesos', description: 'Muzzarella, parmesano, reggianito y roquefort.', price: 'A consultar' },
-      { id: 'piz-napo', name: 'Napolitana', description: 'Queso, rodajas de tomate, huevo, orégano, aceituna y morrón.', price: 'A consultar' },
-      { id: 'piz-calabresa', name: 'Calabresa', description: 'Queso, milán, aceitunas, morrón y huevo.', price: 'A consultar' },
-      { id: 'piz-cebollada', name: 'Cebollada', description: 'Queso, cebolla caramelizada, aceitunas y morrón.', price: 'A consultar' },
-    ],
-  },
-  {
-    id: 'guarniciones',
-    name: 'Guarniciones y Ensaladas',
-    icon: 'ti-candy',
-    description: 'Para acompañar y compartir.',
-    products: [
-      { id: 'guar-ens-papas', name: 'Ensalada de Papas', price: '$5.500' },
-      { id: 'guar-mixta', name: 'Ensalada Mixta', price: '$5.500' },
-      { id: 'guar-fritas', name: 'Papas Fritas', price: '$7.500' },
-      { id: 'guar-tomceb', name: 'Ensalada Tomate y Cebolla', price: '$7.500' },
-      { id: 'guar-zanahoria', name: 'Ensalada de Zanahoria con Huevo', price: '$7.500' },
-      { id: 'guar-cheddar-bacon', name: 'Papas con Cheddar y Bacon', price: '$8.500' },
-      { id: 'guar-italianas', name: 'Papas Italianas', price: '$9.000' },
-      { id: 'guar-provenzal', name: 'Papas Provenzal', price: '$9.000' },
-      { id: 'guar-americanas', name: 'Papas Americanas', description: 'Fritas, huevo frito y cebolla caramelizada.', price: '$9.500' },
-      { id: 'guar-muzza', name: 'Bastones de Muzzarella', price: '$10.000' },
-      { id: 'guar-aros', name: 'Aros de Cebolla', price: '$10.000' },
-      { id: 'guar-noisette', name: 'Papas Noisette', price: '$11.000' },
-    ],
-  },
-  {
-    id: 'postres',
-    name: 'Postres',
-    icon: 'ti-cake',
-    description: 'Dulces finales para redondear la mesa.',
-    products: [
-      { id: 'pos-bombon', name: 'Bombón Escocés', price: '$1.500' },
-      { id: 'pos-flan', name: 'Flan con Dulce de Leche y Crema', price: 'A consultar' },
-    ],
-  },
-  // ==========================================
-  // BEBIDAS
-  // ==========================================
-  {
-    id: 'cervezas',
-    name: 'Cervezas',
+    id: 'con-alcohol',
+    name: 'Con Alcohol',
     icon: 'ti-beer',
-    description: 'Cervezas artesanales e importadas.',
+    description: 'Cervezas',
     products: [
       { id: 'cer-liso', name: 'Liso', price: '$1.900' },
       { id: 'cer-liso-gran', name: 'Liso con Granadina', price: '$2.400' },
@@ -647,51 +449,304 @@ const MENU_DATA = [
       { id: 'cer-copon-gran', name: 'Copón con Granadina', price: '$3.400' },
       { id: 'cer-pinta', name: 'Pinta', price: '$3.800' },
       { id: 'cer-pinta-gran', name: 'Pinta con Granadina', price: '$4.300' },
-      { id: 'cer-lata-quilmes', name: 'Lata Quilmes', price: '$3.600' },
+      { id: 'cer-lata-quilmes', name: 'Lata Quilmes', price: '$3.800' },
       { id: 'cer-lata-andes', name: 'Lata Andes Negra', price: '$4.900' },
+      { id: 'cer-heineken', name: 'Cerveza Heineken', price: '$9.000' },
       { id: 'cer-santafe', name: 'Cerveza Santa Fe', price: '$6.300' },
       { id: 'cer-santafe-pilsen', name: 'Cerveza Santa Fe Pilsen', price: '$6.500' },
-      { id: 'cer-heineken', name: 'Cerveza Heineken', price: '$9.000' },
     ],
   },
+  // ==========================================
+  // 2. VINOS
+  // ==========================================
   {
     id: 'vinos',
     name: 'Vinos',
     icon: 'ti-glass-champagne',
     description: 'Vinos tintos, blancos y rosados.',
     products: [
-      { id: 'vin-almamora', name: 'Vino Tinto Alma Mora', price: '$6.500' },
+      { id: 'vin-almamora', name: 'Vino Tinto Alma Mora', price: '$8.500' },
       { id: 'vin-estancia', name: 'Vino Tinto / Blanco Estancia Mendoza', price: '$7.500' },
       { id: 'vin-santajulia', name: 'Vino Tinto Santa Julia', price: '$9.500' },
       { id: 'vin-chenin', name: 'Vino Santa Julia Chenin', price: '$13.000' },
-      { id: 'vin-dilema', name: 'Vino Tinto / Blanco Dilema', price: 'A consultar' },
+      { id: 'vin-dilema', name: 'Vino Tinto / Blanco Dilema', price: '$8.500' },
     ],
   },
+  // ==========================================
+  // 3. APERITIVOS
+  // ==========================================
   {
     id: 'aperitivos',
     name: 'Aperitivos',
     icon: 'ti-glass-cocktail',
     description: 'Clásicos para opening de mesa.',
     products: [
-      { id: 'ape-gin', name: 'Gin Heredero', price: '$3.000' },
-      { id: 'ape-aperol', name: 'Aperol', price: '$4.500' },
-      { id: 'ape-fernet', name: 'Fernet', price: 'A consultar' },
-      { id: 'ape-gancia', name: 'Gancia', price: 'A consultar' },
+      { id: 'ape-fernet', name: 'Fernet', price: '$5.000' },
+      { id: 'ape-gancia', name: 'Gancia', price: '$4.500' },
+      { id: 'ape-gin', name: 'Gin Heredero', price: 'A consultar' },
+      { id: 'ape-aperol', name: 'Aperol', price: 'A consultar' },
     ],
   },
+  // ==========================================
+  // 4. SIN ALCOHOL
+  // ==========================================
   {
     id: 'sin-alcohol',
     name: 'Sin Alcohol',
     icon: 'ti-glass',
-    description: 'Gaseosas, aguas y bebidas sin alcohol.',
+    description: 'Gaseosas y aguas sin alcohol.',
     products: [
-      { id: 'sa-agua-congas', name: 'Agua con Gas 250ml', price: '$3.600' },
-      { id: 'sa-gaseosa-500', name: 'Gaseosa 500ml', description: 'Coca Cola, Sprite o Fanta.', price: '$4.500' },
-      { id: 'sa-agua-singas-500', name: 'Agua Sin Gas 500ml', price: '$4.500' },
-      { id: 'sa-agua-sab-500', name: 'Agua Saborizada 500ml', description: 'Pomelo, Manzana o Naranja.', price: '$4.600' },
-      { id: 'sa-agua-singas-15', name: 'Agua Sin Gas 1.5L', price: '$6.000' },
-      { id: 'sa-agua-sab-15', name: 'Agua Saborizada 1.5L', description: 'Pomelo, Manzana o Naranja.', price: '$7.000' },
-      { id: 'sa-gaseosa-15', name: 'Gaseosa 1.5L', description: 'Coca Cola, Sprite o Fanta.', price: 'A consultar' },
+      { id: 'sa-gaseosa-15', name: 'Gaseosa 1.5L', description: 'Coca Cola | Sprite | Fanta.', price: '$7.000' },
+      { id: 'sa-gaseosa-500', name: 'Gaseosa 500ml', description: 'Coca Cola | Sprite | Fanta.', price: '$4.500' },
+      { id: 'sa-agua-sab-15', name: 'Agua Saborizada 1.5L', description: 'Pomelo | Manzana | Naranja.', price: '$7.000' },
+      { id: 'sa-agua-sab-500', name: 'Agua Saborizada 500ml', description: 'Pomelo | Manzana | Naranja.', price: '$4.500' },
+      { id: 'sa-agua-singas-15', name: 'Agua sin Gas 1.5L', price: '$6.000' },
+      { id: 'sa-agua-singas-500', name: 'Agua sin Gas 500ml', price: '$4.500' },
+      { id: 'sa-agua-congas', name: 'Agua con Gas 250ml', price: '$3.500' },
+    ],
+  },
+  // ==========================================
+  // 5. HAMBURGUESAS
+  // ==========================================
+  {
+    id: 'hamburguesas',
+    name: 'Hamburguesas con Papas Fritas',
+    icon: 'ti-burger',
+    description: 'Carne premium, preparadas al momento.',
+    products: [
+      { id: 'burg-pancarne', name: 'Pan Carne', price: '$11.000' },
+      { id: 'burg-comun', name: 'Común', description: 'Queso, lechuga y tomate.', price: '$12.000' },
+      { id: 'burg-gratinada', name: 'Gratinada', description: 'Jamón y queso.', price: '$12.000' },
+      { id: 'burg-especial', name: 'Especial', description: 'Jamón, queso, lechuga y tomate.', price: '$12.500' },
+      { id: 'burg-completa', name: 'Completa', description: 'Jamón, queso, lechuga, tomate y huevo frito.', price: '$13.000' },
+      { id: 'burg-cheddar', name: 'Cheddar', description: 'Queso cheddar, bacon, salsa barbacoa y cebolla.', price: '$15.000' },
+      { id: 'burg-azul', name: 'Azul', description: 'Queso, queso azul, lechuga, tomate, huevo y jamón.', price: '$15.000' },
+      { id: 'burg-super', name: 'Súper', description: 'Queso, jamón, huevo frito, cheddar, cebolla y bacon.', price: '$15.000' },
+      { id: 'burg-veggie', name: 'Vegetariana', description: 'Medallón, tomate, lechuga y queso.', price: '$12.500', badges: ['veg'] },
+    ],
+  },
+  // ==========================================
+  // 7. TABLAS
+  // ==========================================
+  {
+    id: 'tablas',
+    name: 'Tablas',
+    icon: 'ti-grill',
+    description: 'Para compartir.',
+    products: [
+      { id: 'tab-milanesas', name: 'Milanesas', description: 'Para 2 personas. De pollo y de carne con fritas.', price: '$25.000', badges: ['share'] },
+      { id: 'tab-campo', name: 'Campo', description: 'Para 2 personas. Queso, salamines, aceitunas, jamón, mortadela, primavera, milán, escabeche.', price: '$25.000', badges: ['share'] },
+      { id: 'tab-criolla', name: 'Criolla', description: 'Para 2 personas. Salamín, queso y aceituna.', price: '$24.000', badges: ['share'] },
+      { id: 'tab-angelino', name: 'Angelino', description: 'Para 4 personas. Papas fritas, milanesas, escabeche, variedad de fiambres, sandwiches, empanadas y papas con mayonesa.', price: '$42.000', badges: ['share', 'star'] },
+      { id: 'tab-media-angelino', name: 'Media Angelino', description: 'Para 2 personas.', price: '$25.000', badges: ['share'] },
+      { id: 'tab-caliente', name: 'Caliente', description: 'Para 2 personas. Cazuela de salchichas con salsa, cazuela de pollo al verdeo, 2 empanadas, 4 tostados, milanesa de carne y pollo, papas fritas.', price: '$30.000', badges: ['share'] },
+      { id: 'tab-argentina', name: 'Argentina', description: 'Para 4 personas. Pollo arrolado, pionono, sandwiches mixtos, 4 empanadas, salamín, queso y aceitunas.', price: '$45.000', badges: ['share'] },
+      { id: 'tab-media-argentina', name: 'Media Argentina', description: 'Para 2 personas.', price: '$33.000', badges: ['share'] },
+      { id: 'tab-veggie', name: 'Vegetariana', description: 'Para 2 personas. Queso, bastones de muzzarella, aros de cebolla, aceitunas, fritas y sandwiches de queso.', price: '$35.000', badges: ['share', 'veg'] },
+    ],
+  },
+  // ==========================================
+  // 8. PIZZAS
+  // ==========================================
+  {
+    id: 'pizzas',
+    name: 'Pizzas',
+    icon: 'ti-pizza',
+    description: 'Pizzas artesanales, masa casera.',
+    products: [
+      { id: 'piz-comun', name: 'Común', description: 'Queso, morrón, huevo y aceitunas.', price: '$15.500' },
+      { id: 'piz-muzzarella', name: 'Muzzarella', description: 'Muzzarella, aceitunas.', price: '$15.500' },
+      { id: 'piz-napo', name: 'Napolitana', description: 'Queso, rodajas de tomate, huevo, orégano, aceituna y morrón.', price: '$16.500' },
+      { id: 'piz-especial', name: 'Especial', description: 'Queso, jamón, huevo, morrón y aceitunas.', price: '$16.500' },
+      { id: 'piz-calabresa', name: 'Calabresa', description: 'Queso, milán, aceitunas, morrón y huevo.', price: '$16.500' },
+      { id: 'piz-cebollada', name: 'Cebollada', description: 'Queso, cebolla caramelizada, aceitunas y morrón.', price: '$16.500' },
+      { id: 'piz-provenzal', name: 'Provenzal', description: 'Queso, provenzal, aceituna y morrón.', price: '$16.500' },
+      { id: 'piz-anchoa', name: 'Anchoa', description: 'Queso, morrón, aceitunas y anchoas.', price: '$18.000' },
+      { id: 'piz-4quesos', name: '4 Quesos', description: 'Muzzarella, parmesano, reggianito y roquefort.', price: '$18.000' },
+      { id: 'piz-roque', name: 'Roquefort', description: 'Queso, queso roquefort y aceitunas.', price: '$18.000' },
+      { id: 'piz-super', name: 'Súper', description: 'Queso, palmitos, salsa golf, jamón, aceituna, morrón y huevo.', price: '$20.000' },
+    ],
+  },
+  // ==========================================
+  // 9. FAMILIARES DE MILANESA
+  // ==========================================
+  {
+    id: 'familiares',
+    name: 'Familiares de Milanesa',
+    icon: 'ti-sandwich',
+    description: 'Familiares de milanesa con fritas.',
+    products: [
+      { id: 'fam-comun', name: 'Común', description: 'Queso, lechuga y tomate.', price: '$17.500' },
+      { id: 'fam-gratin', name: 'Gratinado', description: 'Jamón y queso.', price: '$18.500' },
+      { id: 'fam-completo', name: 'Completo', description: 'Lechuga, tomate, jamón, queso y huevo frito.', price: '$19.500' },
+    ],
+  },
+  // ==========================================
+  // 10. MILANESAS
+  // ==========================================
+  {
+    id: 'milanesas',
+    name: 'Milanesas con Papas Fritas',
+    icon: 'ti-tools-kitchen-2',
+    description: 'Milanesas con papas fritas.',
+    products: [
+      { id: 'mil-comun', name: 'Común', price: '$17.500' },
+      { id: 'mil-pizza', name: 'A la Pizza', description: 'Queso, aceitunas y salsa.', price: '$18.500' },
+      { id: 'mil-super', name: 'Súper', description: 'Salsa, queso, jamón, aceitunas, morrón y huevo.', price: '$19.500' },
+      { id: 'mil-napo', name: 'Napolitana', description: 'Queso, rodajas de tomate, orégano, huevo, morrón y aceitunas.', price: '$19.500' },
+      { id: 'mil-fugazzeta', name: 'Fugazzeta', description: 'Queso, salsa, cebolla y aceitunas.', price: '$19.500' },
+      { id: 'mil-caballo', name: 'A Caballo', description: 'Huevo frito.', price: '$18.500' },
+      { id: 'mil-cheddar', name: 'Cheddar', description: 'Cheddar, cebolla y bacon.', price: '$21.000' },
+    ],
+  },
+  // ==========================================
+  // 11. LOMITOS
+  // ==========================================
+  {
+    id: 'lomitos',
+    name: 'Lomitos con Papas Fritas',
+    icon: 'ti-lego',
+    description: 'Lomitos con papas fritas.',
+    products: [
+      { id: 'lom-comun', name: 'Común', description: 'Queso, tomate y lechuga.', price: '$20.000' },
+      { id: 'lom-gratin', name: 'Gratinado', description: 'Jamón y queso.', price: '$20.000' },
+      { id: 'lom-especial', name: 'Especial', description: 'Jamón, queso, lechuga y tomate.', price: '$21.000' },
+      { id: 'lom-completo', name: 'Completa', description: 'Jamón, queso, lechuga, tomate y huevo frito.', price: '$23.000' },
+    ],
+  },
+  // ==========================================
+  // 12. SÁNDWICHES DE MIGA
+  // ==========================================
+  {
+    id: 'sandwiches-miga',
+    name: 'Sándwiches de Miga',
+    icon: 'ti-slice',
+    description: '8 sándwiches por plancha.',
+    products: [
+      { id: 'miga-jq', name: 'Jamón y Queso — Mixto', price: '$9.000' },
+      { id: 'miga-queso', name: 'Queso — Mixto', price: '$9.000' },
+      { id: 'miga-milan', name: 'Milán — Mixto', price: '$9.500' },
+      { id: 'miga-pollo', name: 'Pollo — Mixto', price: '$10.000' },
+      { id: 'miga-lengua', name: 'Lengua — Mixto', price: '$10.500' },
+      { id: 'miga-jcrudo', name: 'Jamón Crudo — Mixto', price: '$11.500' },
+      { id: 'miga-bondiola', name: 'Bondiola — Mixto', price: '$10.500' },
+      { id: 'miga-roque', name: 'Roquefort — Mixto', price: '$10.500' },
+      { id: 'miga-anchoa', name: 'Anchoa — Mixto', price: '$10.500' },
+      { id: 'trip-jq', name: 'Jamón y Queso — Triple', price: '$10.500' },
+      { id: 'trip-queso', name: 'Queso — Triple', price: '$10.500' },
+      { id: 'trip-pollo', name: 'Pollo — Triple', price: '$11.000' },
+      { id: 'trip-lengua', name: 'Lengua — Triple', price: '$11.500' },
+      { id: 'trip-jcrudo', name: 'Jamón Crudo — Triple', price: '$13.000' },
+    ],
+  },
+  // ==========================================
+  // 13. PLATOS CALIENTES
+  // ==========================================
+  {
+    id: 'platos-calientes',
+    name: 'Platos Calientes',
+    icon: 'ti-flame',
+    description: '',
+    products: [
+      { id: 'pc-bondiola', name: 'Bondiola al Plato', description: 'A la mostaza, al roquefort, al puerro.', price: '$18.500' },
+      { id: 'pc-matambre', name: 'Matambre', price: '$19.500' },
+      { id: 'pc-matpizz', name: 'Matambre a la Pizza', price: '$21.000' },
+      { id: 'pc-vacio', name: 'Vacío al Horno', description: 'A la mostaza, al roquefort, al puerro.', price: '$22.000' },
+      { id: 'pc-canelones', name: 'Canelones de Verdura', description: 'Con salsa rosa o bolognesa.', price: 'A consultar' },
+      { id: 'pc-tallarines', name: 'Tallarines', description: 'Con salsa rosa o bolognesa.', price: 'A consultar' },
+    ],
+  },
+  // ==========================================
+  // 14. GUARNICIONES
+  // ==========================================
+  {
+    id: 'guarniciones',
+    name: 'Guarniciones',
+    icon: 'ti-candy',
+    description: 'Para acompañar y compartir.',
+    products: [
+      { id: 'guar-fritas', name: 'Papas Fritas', price: '$7.500' },
+      { id: 'guar-cheddar-bacon', name: 'Papas con Cheddar y Bacon', price: '$9.500' },
+      { id: 'guar-americanas', name: 'Papas Americanas', description: 'Fritas, huevo frito y cebolla caramelizada.', price: '$9.500' },
+      { id: 'guar-italianas', name: 'Papas Italianas', price: '$9.000' },
+      { id: 'guar-provenzal', name: 'Papas Provenzal', price: '$9.000' },
+      { id: 'guar-muzza', name: 'Bastones de Muzza', price: 'A consultar' },
+      { id: 'guar-aros', name: 'Aros de Cebolla', price: '$10.000' },
+      { id: 'guar-noisette', name: 'Papas Noisette', price: '$11.000' },
+      { id: 'guar-ens-papas', name: 'Ensalada de Papas', price: '$7.500' },
+      { id: 'guar-mixta', name: 'Ensalada Mixta', price: '$7.500' },
+      { id: 'guar-tomceb', name: 'Ensalada Tomate y Cebolla', price: '$7.500' },
+      { id: 'guar-zanahoria', name: 'Ensalada de Zanahoria con Huevo', price: '$7.500' },
+    ],
+  },
+  // ==========================================
+  // 15. SALSAS
+  // ==========================================
+  {
+    id: 'salsas',
+    name: 'Salsas',
+    icon: 'ti-bottle',
+    description: 'Salsas caseras.',
+    products: [
+      { id: 'sal-prov', name: 'Provenzal', price: '$4.500' },
+      { id: 'sal-mostaza', name: 'Mostaza', price: '$4.500' },
+      { id: 'sal-cheddar', name: 'Cheddar', price: '$5.000' },
+      { id: 'sal-mayo', name: 'Mayonesa Casera', price: '$4.500' },
+    ],
+  },
+  // ==========================================
+  // 16. PANINI
+  // ==========================================
+  {
+    id: 'paninis',
+    name: 'Panini con Papas Fritas',
+    icon: 'ti-bread',
+    description: 'Panini caliente con papas fritas.',
+    products: [
+      { id: 'pani-comun', name: 'Común', description: 'Queso, lechuga y tomate.', price: '$12.500' },
+      { id: 'pani-gratin', name: 'Gratinado', description: 'Jamón y queso.', price: '$12.500' },
+      { id: 'pani-completo', name: 'Completo', description: 'Jamón, queso, tomate, lechuga y huevo frito.', price: '$13.500' },
+      { id: 'pani-cheddar', name: 'Cheddar', description: 'Queso cheddar, panceta, BBQ y cebolla.', price: '$15.500' },
+    ],
+  },
+  // ==========================================
+  // 17. EMPANADAS
+  // ==========================================
+  {
+    id: 'empanadas',
+    name: 'Empanadas Fritas',
+    icon: 'ti-cookie',
+    description: 'Empanadas fritas.',
+    products: [
+      { id: 'emp-carne', name: 'Carne', price: '$1.800' },
+      { id: 'emp-jq', name: 'Jamón y Queso', price: '$1.800' },
+    ],
+  },
+  // ==========================================
+  // 18. PANCHOS
+  // ==========================================
+  {
+    id: 'panchos',
+    name: 'Panchos con Papas Fritas',
+    icon: 'ti-sausage',
+    description: 'Con papas fritas.',
+    products: [
+      { id: 'pancho-comun', name: 'Común', description: 'Aderezos.', price: '$9.000' },
+      { id: 'pancho-gratin', name: 'Gratinado', description: 'Jamón y queso.', price: '$9.000' },
+      { id: 'pancho-cheddar', name: 'Cheddar', description: 'Con salsa cheddar.', price: '$9.500' },
+    ],
+  },
+  // ==========================================
+  // 18. POSTRES
+  // ==========================================
+  {
+    id: 'postres',
+    name: 'Postres',
+    icon: 'ti-cake',
+    description: 'Postres caseros.',
+    products: [
+      { id: 'pos-bombon', name: 'Bombón Escocés', price: '$7.500' },
+      { id: 'pos-flan', name: 'Flan con Dulce de Leche y Crema', price: '$8.500' },
     ],
   },
 ];
@@ -739,7 +794,7 @@ function enterApp() {
   triggerRevealAnimations();
   // Schedule thank-you popup
   if (!sessionStorage.getItem('angelino_thankyou_seen')) {
-    setTimeout(showThankYou, 10000);
+    setTimeout(showThankYou, 15000);
   }
 }
 
