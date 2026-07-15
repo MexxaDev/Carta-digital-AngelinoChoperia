@@ -775,7 +775,7 @@ const searchClear     = document.getElementById('search-clear');
 const pillsContainer  = document.getElementById('pills-container');
 const sectionsContainer = document.getElementById('sections-container');
 const emptyState      = document.getElementById('empty-state');
-const btnSearchToggle = document.getElementById('btn-search-toggle');
+const btnSearchToggle = null;
 const thankyouOverlay = document.getElementById('thankyou-overlay');
 const thankyouClose   = document.getElementById('thankyou-close');
 const thankyouDismiss = document.getElementById('thankyou-dismiss');
@@ -1100,12 +1100,6 @@ searchClear.addEventListener('click', function() {
     initCategoryObserver();
     triggerRevealAnimations();
   }, 50);
-});
-
-btnSearchToggle.addEventListener('click', function() {
-  searchInput.focus();
-  mainScroll.scrollTo({ top: 0, behavior: 'smooth' });
-  setTimeout(function() { searchInput.focus(); }, 400);
 });
 
 // ============================================
